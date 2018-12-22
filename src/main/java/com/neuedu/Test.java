@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/test")
+@WebServlet("")
 public class Test extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("WEB-INF/pages/test.jsp").forward(req,resp);
+        req.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(req,resp);
     }
 }
