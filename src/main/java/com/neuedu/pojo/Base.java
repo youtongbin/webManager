@@ -6,6 +6,10 @@ public class Base {
     public Base() {
     }
 
+    public Base(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

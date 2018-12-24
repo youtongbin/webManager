@@ -12,7 +12,6 @@ import com.neuedu.service.UserService;
 import myTools.util.CookieUtil;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;

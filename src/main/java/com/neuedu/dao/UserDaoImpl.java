@@ -51,4 +51,9 @@ public class UserDaoImpl implements IUserDao {
     public int add(User user) {
         return JdbcUtil.executeUpdate("insert into user(username,password,tele) values (?,?,?)",user.getUsername(),user.getPassword(),user.getTele());
     }
+
+    @Override
+    public int update(User newInfo) {
+        return JdbcUtil.executeUpdate("update user set username=?,password=?,tele=? where id=?",newInfo.getUsername(),newInfo.getPassword(),newInfo.getTele(),newInfo.getId());
+    }
 }

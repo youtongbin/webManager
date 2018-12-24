@@ -11,4 +11,6 @@ public interface IUserDao {
     User getOne(String username);
     //添加用户
     int add(User user);
+    //修改信息
+    int update(User newInfo);
 }

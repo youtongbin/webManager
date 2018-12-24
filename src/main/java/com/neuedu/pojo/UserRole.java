@@ -12,6 +12,12 @@ public class UserRole extends Base {
         this.roleId = roleId;
     }
 
+    public UserRole(Integer id, Integer userId, Integer roleId) {
+        super(id);
+        this.userId = userId;
+        this.roleId = roleId;
+    }
+
     public Integer getUserId() {
         return userId;
     }

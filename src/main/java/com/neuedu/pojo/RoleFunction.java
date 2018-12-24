@@ -12,6 +12,12 @@ public class RoleFunction extends Base {
         this.functionId = functionId;
     }
 
+    public RoleFunction(Integer id, Integer roleId, Integer functionId) {
+        super(id);
+        this.roleId = roleId;
+        this.functionId = functionId;
+    }
+
     public Integer getRoleId() {
         return roleId;
     }

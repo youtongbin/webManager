@@ -1,5 +1,7 @@
-package com.neuedu.pojo;
+package com.neuedu.controller;
 
+import com.neuedu.service.IUserService;
+import com.neuedu.service.UserService;
 import myTools.util.CookieUtil;
 
 import javax.servlet.ServletException;
@@ -8,9 +10,11 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * cookie和session完成数据存储和页面保护、跳转
+ * cookie和session完成数据存储和页面保护、跳转、获取用户信息
  */
 public class TransPage extends HttpServlet {
+    private static IUserService userService = new UserService();
+
     public static void checkSession(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         String username = (String)session.getAttribute("username");
@@ -22,6 +26,7 @@ public class TransPage extends HttpServlet {
                 //如果session中URL与网址栏请求相同，显示请求信息
                 session.setAttribute("username",username);
                 session.setAttribute("url",url);
+                req.setAttribute("user",userService.getOne(username));
                 req.getRequestDispatcher("WEB-INF/pages/" + url + ".jsp").forward(req,resp);
             }else {
                 //不相同跳入登录页

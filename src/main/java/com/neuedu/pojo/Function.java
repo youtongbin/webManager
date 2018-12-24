@@ -6,6 +6,11 @@ public class Function extends Base {
     public Function() {
     }
 
+    public Function(Integer id, String url) {
+        super(id);
+        this.url = url;
+    }
+
     public Function(String url) {
         this.url = url;
     }

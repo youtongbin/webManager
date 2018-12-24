@@ -10,6 +10,11 @@ public class Role extends Base {
         this.roleName = roleName;
     }
 
+    public Role(Integer id, String roleName) {
+        super(id);
+        this.roleName = roleName;
+    }
+
     public String getRoleName() {
         return roleName;
     }
