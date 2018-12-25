@@ -1,5 +1,7 @@
 package com.neuedu.controller;
 
+import com.neuedu.pojo.TransPage;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

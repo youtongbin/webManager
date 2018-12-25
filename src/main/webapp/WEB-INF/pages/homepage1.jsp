@@ -28,13 +28,14 @@
 <body>
 <div class="con">
     <div class="head">
-        <h1>欢迎进入管理系统</h1>
+        <h1>很高兴见到你<span>${username}</span></h1>
     </div>
 
     <div class="main">
         <div class="left">
             <dl>
                 <dt>用户中心</dt>
+                <dd id="products">商品列表</dd>
                 <dd id="personal">个人中心</dd>
             </dl>
             <dl>
@@ -45,7 +46,76 @@
         </div>
 
         <div class="right">
-            <div class="right_item indent_up" id="personal_con">
+
+            <div class="right_item indent_up" id="products_con">
+                <div class="right_title">
+                    <span>商品列表</span>
+
+                </div>
+                <div class="right_con">
+                    <table id="products_tb">
+                        <thead>
+                            <tr>
+                                <th>商品名</th>
+                                <th>单价</th>
+                                <th>图片</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="fen_ye">
+
+                    </div>
+
+                    <div class="search">
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="right_item indent_down" id="personal_con">
                 <div class="right_title">
                     <span>个人中心</span>
                 </div>
@@ -74,9 +144,10 @@
                         </div>
 
                     </form>
-
                 </div>
+
             </div>
+
 
             <div class="right_item indent_down" id="user_feedback_con">
                 <div class="right_title">
@@ -100,7 +171,6 @@
 
 <script src="${path}/js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="${path}/js/homepage.js"></script>
-
 
 </body>
 </html>

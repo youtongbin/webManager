@@ -27,16 +27,16 @@
 <body>
     <div class="con">
         <div class="head">
-            <h1>欢迎进入管理系统</h1>
+            <h1>很高兴见到你<span>${username}</span></h1>
         </div>
 
         <div class="main">
             <div class="left">
                 <dl>
                     <dt>用户中心</dt>
+                    <dd id="products">商品列表</dd>
                     <dd id="personal">个人中心</dd>
-                    <dd id="user_man">用户管理</dd>
-                    <dd id="add_user">添加用户</dd>
+                    <dd id="add_product">添加商品</dd>
                     <dd id="power">授权管理</dd>
                 </dl>
                 <dl>
@@ -47,7 +47,19 @@
             </div>
 
             <div class="right">
-                <div class="right_item indent_up" id="personal_con">
+
+                <div class="right_item indent_up" id="products_con">
+                    <div class="right_title">
+                        <span>商品列表</span>
+
+                    </div>
+                    <div class="right_con">
+
+                    </div>
+
+                </div>
+
+                <div class="right_item indent_down" id="personal_con">
                     <div class="right_title">
                         <span>个人中心</span>
                     </div>
@@ -80,20 +92,9 @@
 
                 </div>
 
-                <div class="right_item indent_down" id="user_man_con">
+                <div class="right_item indent_down" id="add_product_con">
                     <div class="right_title">
-                        <span>用户管理</span>
-
-                    </div>
-                    <div class="right_con">
-
-                    </div>
-
-                </div>
-
-                <div class="right_item indent_down" id="add_user_con">
-                    <div class="right_title">
-                        <span>添加用户</span>
+                        <span>添加商品</span>
 
                     </div>
                     <div class="right_con">

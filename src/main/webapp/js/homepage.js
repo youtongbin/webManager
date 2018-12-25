@@ -25,22 +25,28 @@ $(function(){
     /**
      * 左右关联菜单
      */
+
+    //商品列表
+    $("#products").click(function () {
+        $("#products_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
+    });
+
+    //个人中心
     $("#personal").click(function () {
         $("#personal_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
     });
 
-    $("#user_man").click(function () {
-        $("#user_man_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
+    //添加商品
+    $("#add_product").click(function () {
+        $("#add_product_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
     });
 
-    $("#add_user").click(function () {
-        $("#add_user_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
-    });
-
+    //授权管理
     $("#power").click(function () {
         $("#power_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
     });
 
+    //用户反馈
     $("#user_feedback").click(function () {
         $("#user_feedback_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
     });

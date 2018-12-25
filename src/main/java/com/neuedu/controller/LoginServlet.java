@@ -1,14 +1,8 @@
 package com.neuedu.controller;
 
 import com.neuedu.dao.*;
-import com.neuedu.pojo.Function;
-import com.neuedu.pojo.RoleFunction;
-import com.neuedu.pojo.User;
-import com.neuedu.pojo.UserRole;
-import com.neuedu.service.IUserRoleService;
-import com.neuedu.service.IUserService;
-import com.neuedu.service.UserRoleService;
-import com.neuedu.service.UserService;
+import com.neuedu.pojo.*;
+import com.neuedu.service.*;
 import myTools.util.CookieUtil;
 
 import javax.servlet.ServletException;
@@ -22,8 +16,9 @@ import java.util.Map;
 public class LoginServlet extends HttpServlet {
     IUserService userService = new UserService();
     IUserRoleService userRoleService = new UserRoleService();
-    IRoleFunctionDao roleFunctionDao = new RoleFunctionDaoImpl();
-    IFunctionDao functionDao = new FunctionDaoImpl();
+    IRoleFunctionService roleFunctionService = new RoleFunctionService();
+    IFunctionService functionService = new FunctionService();
+    IProductService productService = new ProductService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -54,11 +49,15 @@ public class LoginServlet extends HttpServlet {
                      * 通过role_id获取其最高权限对应跳转地址（function_id）
                      * 跳转url
                      */
+
+                    /**
+                     * 个人信息
+                     */
                     List<UserRole> userRoles = userRoleService.getLists(user.getId());
                     Integer maxRoleId = userRoles.get(0).getRoleId();
-                    List<RoleFunction> roleFunctions = roleFunctionDao.getLists(maxRoleId);
+                    List<RoleFunction> roleFunctions = roleFunctionService.getLists(maxRoleId);
                     Integer maxFunctionId = roleFunctions.get(0).getFunctionId();
-                    Function function = functionDao.getOne(maxFunctionId);
+                    Function function = functionService.getOne(maxFunctionId);
                     String url = function.getUrl();
 
                     /**
@@ -75,9 +74,13 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("username",username);
                     session.setAttribute("url",url);
 
+                    /**
+                     * 用户登录检测通过，带着用户信息，转发到获取商品信息请求，获取商品信息
+                     */
+//                    req.setAttribute("url",url);
+//                    req.getRequestDispatcher("product_list").forward(req,resp);
 
                     resp.getWriter().write(url);
-//                    resp.sendRedirect("transpage");
                 }else {
                     //密码错误
                     resp.getWriter().write("2");

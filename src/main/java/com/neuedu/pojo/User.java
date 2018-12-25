@@ -1,5 +1,8 @@
 package com.neuedu.pojo;
 
+import lombok.Data;
+
+@Data
 public class User extends Base {
     private String username;
     private String password;
@@ -21,36 +24,4 @@ public class User extends Base {
         this.tele = tele;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getTele() {
-        return tele;
-    }
-
-    public void setTele(String tele) {
-        this.tele = tele;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", tele='" + tele + '\'' +
-                '}';
-    }
 }

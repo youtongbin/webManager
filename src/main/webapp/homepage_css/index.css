@@ -18,6 +18,11 @@
 	color: white;
 }
 
+h1 span{
+	color: #FFFFCC;
+	font-size: 1.2em;
+}
+
 .head h1{
 	font-family: "楷体";
 	text-indent: 1em;
@@ -84,7 +89,7 @@ dt:hover,dd:hover{
 	font-size: 22px;
 	text-indent: 1em;
 	background-color: #CCC;
-	color: white;
+	color: black;
 }
 
 .right .right_con{
@@ -138,6 +143,68 @@ dt:hover,dd:hover{
 .user_info_fm .opt button{
 	margin-left: 30px;
 }
+
+/*商品信息表*/
+#products_tb{
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+	width: 100%;
+}
+#products_tb th,#products_tb td{
+	padding: 5px 10px;
+	text-align: center;
+	border: 1px solid #cccccc;
+}
+#products_tb tbody tr:nth-child(odd){
+	background-color: beige;
+}
+
+#products_tb thead tr{
+	height: 50px;
+}
+#products_tb tbody tr{
+	height: 40px;
+}
+
+#products_tb thead tr th:nth-child(4),
+#products_tb tbody tr td:nth-child(4){
+	width: 50px;
+}
+
+
+
+
+
+
+
+.fen_ye{
+	height: 80px;
+	background-color: #72d1ff;
+	margin-top: 50px;
+}
+.search{
+	height: 80px;
+	background-color: aquamarine;
+}
+
+/*ul{*/
+	/*list-style: none;*/
+/*}*/
+/*li{*/
+	/*float: left;*/
+	/*width: 80px;*/
+	/*border: 1px solid #cccccc;*/
+/*}*/
+/*li a{*/
+	/*display: block;*/
+	/*padding: 5px;*/
+	/*text-decoration: none;*/
+	/*color: black;*/
+	/*text-align: center;*/
+/*}*/
+
+
+
 
 
 

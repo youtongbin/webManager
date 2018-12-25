@@ -1,4 +1,4 @@
-package com.neuedu.controller;
+package com.neuedu.pojo;
 
 import com.neuedu.service.IUserService;
 import com.neuedu.service.UserService;
@@ -27,7 +27,13 @@ public class TransPage extends HttpServlet {
                 session.setAttribute("username",username);
                 session.setAttribute("url",url);
                 req.setAttribute("user",userService.getOne(username));
-                req.getRequestDispatcher("WEB-INF/pages/" + url + ".jsp").forward(req,resp);
+
+
+                //转发请求显示列表
+                req.getRequestDispatcher("product_list").forward(req,resp);
+
+
+//                req.getRequestDispatcher("WEB-INF/pages/" + url + ".jsp").forward(req,resp);
             }else {
                 //不相同跳入登录页
                 resp.sendRedirect("login");

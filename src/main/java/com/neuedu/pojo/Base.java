@@ -1,5 +1,8 @@
 package com.neuedu.pojo;
 
+import lombok.Data;
+
+@Data
 public class Base {
     private Integer id;
 
@@ -10,18 +13,4 @@ public class Base {
         this.id = id;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "Base{" +
-                "id=" + id +
-                '}';
-    }
 }

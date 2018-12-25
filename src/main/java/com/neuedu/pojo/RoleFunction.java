@@ -1,5 +1,8 @@
 package com.neuedu.pojo;
 
+import lombok.Data;
+
+@Data
 public class RoleFunction extends Base {
     private Integer roleId;
     private Integer functionId;
@@ -18,27 +21,4 @@ public class RoleFunction extends Base {
         this.functionId = functionId;
     }
 
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    public Integer getFunctionId() {
-        return functionId;
-    }
-
-    public void setFunctionId(Integer functionId) {
-        this.functionId = functionId;
-    }
-
-    @Override
-    public String toString() {
-        return "RoleFunction{" +
-                "roleId=" + roleId +
-                ", functionId=" + functionId +
-                '}';
-    }
 }
