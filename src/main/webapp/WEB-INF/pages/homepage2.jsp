@@ -37,7 +37,7 @@
                 <dt>用户中心</dt>
                 <dd id="products">商品列表</dd>
                 <dd id="personal">个人中心</dd>
-                <dd id="add_product">添加商品</dd>
+                <dd id="product_manager">商品管理</dd>
             </dl>
             <dl>
                 <dt>关于我们</dt>
@@ -54,6 +54,44 @@
 
                 </div>
                 <div class="right_con">
+                    <table class="products_tb">
+                        <thead>
+                        <tr>
+                            <th>商品编号</th>
+                            <th>商品名称</th>
+                            <th>商品单价</th>
+                            <th>图片</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <c:forEach items="${data.lists}" var="p">
+                            <tr>
+                                <td>${p.id}</td>
+                                <td>${p.productName}</td>
+                                <td>${p.price}</td>
+                                <td><img src="${p.url}" alt="图片" width="20" height="20"></td>
+                                <td><button type="button">操作</button></td>
+                            </tr>
+
+                        </c:forEach>
+
+                        </tbody>
+                    </table>
+
+                    <div class="fen_ye">
+                        <ul>
+                            ${data.pageView}
+                        </ul>
+                    </div>
+
+                    <div class="search">
+                        <form method="get" class="search_fm">
+                            <input type="text" class="key" name="key" value="">
+                            <button type="submit" class="submit">搜索</button>
+                        </form>
+                    </div>
 
                 </div>
 
@@ -66,7 +104,7 @@
                 <div class="right_con">
                     <form class="user_info_fm">
                         <input type="hidden" value="${user.id}" name="user_id" id="user_id">
-                        <table id="user_table">
+                        <table class="user_table">
                             <tr>
                                 <td>用户名:</td>
                                 <td><input type="text" value="${user.username}" name="username" id="username" readonly="readonly"></td>
@@ -92,12 +130,60 @@
 
             </div>
 
-            <div class="right_item indent_down" id="add_product_con">
+            <div class="right_item indent_down" id="product_manager_con">
                 <div class="right_title">
-                    <span>添加商品</span>
+                    <span>商品管理</span>
 
                 </div>
                 <div class="right_con">
+                    <table class="product_manager_tb">
+                        <thead>
+                        <tr>
+                            <th>商品编号</th>
+                            <th>商品名称</th>
+                            <th>商品单价</th>
+                            <th>图片</th>
+                            <th>库存</th>
+                            <th>修改</th>
+                            <th>删除</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <c:forEach items="${data.lists}" var="p">
+                            <tr>
+                                <td>${p.id}</td>
+                                <td>${p.productName}</td>
+                                <td>${p.price}</td>
+                                <td><img src="${p.url}" alt="图片" width="20" height="20"></td>
+                                <td>${p.stock}</td>
+                                <td><button type="button">修改</button></td>
+                                <td><button type="button">删除</button></td>
+                            </tr>
+
+                        </c:forEach>
+
+                        </tbody>
+                    </table>
+
+                    <%--修改商品信息--%>
+                    <div class="update_product">
+                        <div class="upd_tit"><p>修改商品信息</p></div>
+
+                    </div>
+
+                    <div class="fen_ye">
+                        <ul>
+                            ${data.pageView}
+                        </ul>
+                    </div>
+
+                    <div class="search">
+                        <form method="get" class="search_fm">
+                            <input type="text" class="key" name="key" value="">
+                            <button type="submit" class="submit">搜索</button>
+                        </form>
+                    </div>
 
                 </div>
 

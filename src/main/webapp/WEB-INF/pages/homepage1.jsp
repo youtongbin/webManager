@@ -53,63 +53,44 @@
 
                 </div>
                 <div class="right_con">
-                    <table id="products_tb">
+                    <table class="products_tb">
                         <thead>
                             <tr>
-                                <th>商品名</th>
-                                <th>单价</th>
+                                <th>商品编号</th>
+                                <th>商品名称</th>
+                                <th>商品单价</th>
                                 <th>图片</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>2</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>6</td>
-                            </tr>
+
+                            <c:forEach items="${data.lists}" var="p">
+                                <tr>
+                                    <td>${p.id}</td>
+                                    <td>${p.productName}</td>
+                                    <td>${p.price}</td>
+                                    <td><img src="${p.url}" alt="图片" width="20" height="20"></td>
+                                    <td><button type="button">操作</button></td>
+                                </tr>
+
+                            </c:forEach>
+
                         </tbody>
                     </table>
 
                     <div class="fen_ye">
-
+                        <ul>
+                            ${data.pageView}
+                        </ul>
                     </div>
 
                     <div class="search">
-
+                        <form method="get" class="search_fm">
+                            <input type="text" class="key" name="key" value="">
+                            <button type="submit" class="submit">搜索</button>
+                        </form>
                     </div>
-
 
                 </div>
 
@@ -122,7 +103,7 @@
                 <div class="right_con">
                     <form class="user_info_fm">
                         <input type="hidden" value="${user.id}" name="user_id" id="user_id">
-                        <table id="user_table">
+                        <table class="user_table">
                             <tr>
                                 <td>用户名:</td>
                                 <td><input type="text" value="${user.username}" name="username" id="username" readonly="readonly"></td>

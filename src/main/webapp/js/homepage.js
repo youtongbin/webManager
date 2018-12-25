@@ -36,9 +36,9 @@ $(function(){
         $("#personal_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
     });
 
-    //添加商品
-    $("#add_product").click(function () {
-        $("#add_product_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
+    //商品管理
+    $("#product_manager").click(function () {
+        $("#product_manager_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
     });
 
     //授权管理
@@ -92,6 +92,10 @@ $(function(){
            }
         });
     });
+
+    /**
+     * 商品管理
+     */
 
 
 

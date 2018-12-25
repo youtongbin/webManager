@@ -28,6 +28,7 @@ public class TransPage extends HttpServlet {
                 session.setAttribute("url",url);
                 req.setAttribute("user",userService.getOne(username));
 
+                System.out.println("TransPage_url=" + url);
 
                 //转发请求显示列表
                 req.getRequestDispatcher("product_list").forward(req,resp);

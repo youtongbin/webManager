@@ -20,8 +20,30 @@ public class ProductService implements IProductService {
         ProductsData productsData = new ProductsData(pageNo,pageSize,productDao.getCount());
         productsData.setLists(productDao.getLists(pageNo,pageSize));
 
+        return productsData;
+    }
+
+    @Override
+    public ProductsData getLists(int pageNo, int pageSize, String key) {
+        ProductsData productsData = new ProductsData(pageNo,pageSize,productDao.getCount(key));
+        productsData.setLists(productDao.getLists(pageNo,pageSize,key));
 
         return productsData;
+    }
+
+    @Override
+    public List<Product> getLists(String key) {
+        return productDao.getLists(key);
+    }
+
+    @Override
+    public int getCount() {
+        return productDao.getCount();
+    }
+
+    @Override
+    public int getCount(String key) {
+        return productDao.getCount(key);
     }
 
 }

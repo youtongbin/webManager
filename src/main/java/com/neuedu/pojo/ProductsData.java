@@ -1,5 +1,7 @@
 package com.neuedu.pojo;
 
+import lombok.Data;
+
 import java.util.List;
 
 /**
@@ -12,6 +14,7 @@ import java.util.List;
  * url跳转页数地址
  * page_view拼接展示分页条
  */
+@Data
 public class ProductsData {
     private List<?> lists;
     private int pageNo;
@@ -26,38 +29,62 @@ public class ProductsData {
         return pageView;
     }
 
-    public void setUrl(String url){
+    public void setUrl(String url,String params){
+        System.out.println("ProductsData:"+params);
         this.url = url;
         StringBuffer strb = new StringBuffer();
-        if (pageNo == 1){
-            strb.append("<li class='page'><a href='javascript:void(0)'>首页</a></li>");
-            strb.append("<li class='page'><a href='javascript:void(0)'>上一页</a></li>");
-        }else {
-            strb.append("<li class='page'><a href='" + url + "?pageNo=1'>首页</a></li>");
-            strb.append("<li class='page'><a href='" + url + "?pageNo=" + (pageNo-1) + "'>上一页</a></li>");
+        if(pageNo==1){
+            strb.append("<li class='page'><a href='javascript:void(0)"+params+"' >首页</a></li>");
+            strb.append("<li class='page'><a href='javascript:void(0)"+params+"' >上一页</a></li>");
+        }else{
+            strb.append("<li class='page'><a href='"+url+"?pageNo=1"+params+"' >首页</a></li>");
+            strb.append("<li class='page'><a href='"+url+"?pageNo="+(pageNo-1)+""+params+"'>上一页</a></li>");
         }
 
-        for (int i = 1;i <= maxPage;i++){
-            if (i == pageNo){
-                strb.append("<li class='page'><a href='javascript:void(0)'>" + i +"</a></li>");
-            }else {
-                strb.append("<li class='page'><a href='" + url + "?pageNo=" + (i) + "'>" + i + "</a></li>");
+        int min = pageNo-2;
+
+        if(min<=0){
+            min=1;
+            int max=min+4;
+            if(max>maxPage){
+                max=maxPage;
+            }
+            for(int i =min;i<=max;i++){
+                if(i==pageNo){
+                    strb.append("<li><a href='javascript:void(0)"+params+"' >"+i+"</a></li>");
+                }else{
+                    strb.append("<li><a href='"+url+"?pageNo="+i+""+params+"'>"+i+"</a></li>");
+                }
+            }
+        }else{
+            int max=min+4;
+            if(max>maxPage){
+                max=maxPage;
+                min=max-4;
+                if(min<=0){
+                    min=1;
+                }
+            }
+            for(int i =min;i<=max;i++){
+                if(i==pageNo){
+                    strb.append("<li><a href='javascript:void(0)"+params+"' >"+i+"</a></li>");
+                }else{
+                    strb.append("<li><a href='"+url+"?pageNo="+i+""+params+"'>"+i+"</a></li>");
+                }
             }
         }
 
-        if (pageNo == maxPage){
-            strb.append("<li class='page'><a href='javascript:void(0)'>下一页</a></li>");
-            strb.append("<li class='page'><a href='javascript:void(0)'>尾页</a></li>");
-        }else {
-            strb.append("<li class='page'><a href='" + url + "?pageNo=" + (pageNo+1) + "'>下一页</a></li>");
-            strb.append("<li class='page'><a href='" + url + "?pageNo=" + (maxPage) + "'>尾页</a></li>");
+        if(pageNo==maxPage){
+            strb.append("<li class='page'><a href='javascript:void(0)"+params+"'>下一页</a></li>");
+            strb.append("<li class='page'><a href='javascript:void(0)"+params+"'>尾页</a></li>");
+        }else{
+            strb.append("<li class='page'><a href='"+url+"?pageNo="+(pageNo+1)+""+params+"'>下一页</a></li>");
+            strb.append("<li class='page'><a href='"+url+"?pageNo="+(maxPage)+""+params+"'>尾页</a></li>");
         }
         this.pageView = strb.toString();
 
 
     }
-
-
 
 
 

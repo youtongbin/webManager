@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/homepage2")
-public class Homepage2Servlet extends HttpServlet {
+@WebServlet("/homepage")
+public class HomepageServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         TransPage.checkSession(req,resp);

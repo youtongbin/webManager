@@ -36,7 +36,7 @@
                     <dt>用户中心</dt>
                     <dd id="products">商品列表</dd>
                     <dd id="personal">个人中心</dd>
-                    <dd id="add_product">添加商品</dd>
+                    <dd id="product_manager">商品管理</dd>
                     <dd id="power">授权管理</dd>
                 </dl>
                 <dl>
@@ -54,6 +54,44 @@
 
                     </div>
                     <div class="right_con">
+                        <table id="products_tb">
+                            <thead>
+                            <tr>
+                                <th>商品编号</th>
+                                <th>商品名称</th>
+                                <th>商品单价</th>
+                                <th>图片</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <c:forEach items="${data.lists}" var="p">
+                                <tr>
+                                    <td>${p.id}</td>
+                                    <td>${p.productName}</td>
+                                    <td>${p.price}</td>
+                                    <td><img src="${p.url}" alt="图片" width="20" height="20"></td>
+                                    <td><a href="">操作</a></td>
+                                </tr>
+
+                            </c:forEach>
+
+                            </tbody>
+                        </table>
+
+                        <div class="fen_ye">
+                            <ul>
+                                ${data.pageView}
+                            </ul>
+                        </div>
+
+                        <div class="search">
+                            <form method="get" id="search_fm">
+                                <input type="text" id="key" name="key" value="">
+                                <button type="submit" id="submit">搜索</button>
+                            </form>
+                        </div>
 
                     </div>
 
@@ -92,9 +130,9 @@
 
                 </div>
 
-                <div class="right_item indent_down" id="add_product_con">
+                <div class="right_item indent_down" id="product_manager_con">
                     <div class="right_title">
-                        <span>添加商品</span>
+                        <span>商品管理</span>
 
                     </div>
                     <div class="right_con">

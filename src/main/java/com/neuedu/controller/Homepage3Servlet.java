@@ -12,10 +12,7 @@ import java.io.IOException;
 @WebServlet("/homepage3")
 public class Homepage3Servlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        req.getRequestDispatcher("WEB-INF/pages/homepage3.jsp").forward(req,resp);
-
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         TransPage.checkSession(req,resp);
-
     }
 }
