@@ -11,6 +11,31 @@ public class ProductService implements IProductService {
     IProductDao productDao = new ProductDao();
 
     @Override
+    public int addProduct(Product product) {
+        return productDao.addProduct(product);
+    }
+
+    @Override
+    public int update(Product product) {
+        return productDao.update(product);
+    }
+
+    @Override
+    public int delete(Integer id) {
+        return productDao.delete(id);
+    }
+
+    @Override
+    public int deletes(Integer brandId) {
+        return productDao.deletes(brandId);
+    }
+
+    @Override
+    public Product getOne(Integer id) {
+        return productDao.getOne(id);
+    }
+
+    @Override
     public List<Product> getLists() {
         return productDao.getLists();
     }

@@ -69,6 +69,11 @@ dl dd{
 	display: none;
 	background-color: #4B4B4B;
 }
+dl dd a{
+	display: block;
+	color: white;
+	text-decoration: none;
+}
 
 dt:hover,dd:hover{
 	color: black;
@@ -145,9 +150,10 @@ dt:hover,dd:hover{
 	margin-left: 30px;
 }
 
-/*商品列表*/
+/*各个主页列表*/
 .products_tb,
-.product_manager_tb{
+.product_manager_tb,
+.brand_tb{
 	border: 1px solid #cccccc;
 	border-collapse: collapse;
 	width: 100%;
@@ -155,22 +161,27 @@ dt:hover,dd:hover{
 .products_tb th,
 .products_tb td,
 .product_manager_tb th,
-.product_manager_tb td{
+.product_manager_tb td,
+.brand_tb th,
+.brand_tb td{
 	padding: 5px 10px;
 	text-align: center;
 	border: 1px solid #cccccc;
 }
 .products_tb tbody tr:nth-child(odd),
-.product_manager_tb tbody tr:nth-child(odd){
+.product_manager_tb tbody tr:nth-child(odd),
+.brand_tb tbody tr:nth-child(odd){
 	background-color: beige;
 }
 
 .products_tb thead tr,
-.product_manager_tb thead tr{
+.product_manager_tb thead tr,
+.brand_tb thead tr{
 	height: 50px;
 }
 .products_tb tbody tr,
-.product_manager_tb tbody tr{
+.product_manager_tb tbody tr,
+.brand_tb tbody tr{
 	height: 40px;
 }
 
@@ -179,34 +190,80 @@ dt:hover,dd:hover{
 .product_manager_tb thead tr th:nth-child(6),
 .product_manager_tb tbody tr td:nth-child(6),
 .product_manager_tb thead tr th:nth-child(7),
-.product_manager_tb tbody tr td:nth-child(7){
+.product_manager_tb tbody tr td:nth-child(7),
+.brand_tb thead tr th:nth-child(3),
+.brand_tb tbody tr td:nth-child(3),
+.brand_tb thead tr th:nth-child(4),
+.brand_tb tbody tr td:nth-child(4){
 	width: 50px;
 }
 
-.update_product{
-	position: fixed;
-	margin: auto;z-index: 10;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	width: 300px;
-	height: 400px;
+.update_product,
+.update_brand,
+.add_product{
+	margin: auto;
+	width: 100%;
+	height: 100%;
 
 	background-color: black;
-	opacity: 0.8;
-	border-radius: 25px;
+	opacity: 0.6;
+	border-radius: 5px;
 
 	color: white;
 }
-.update_product .upd_tit{
+
+.update_product .upd_tit,
+.update_brand .upb_tit,
+.add_product .add_tit{
 	height: 50px;
-	width: 300px;
 	line-height: 50px;
 	text-align: center;
 	font-size: 24px;
 }
-
+.update_product .update_pro_fm,
+.update_brand .update_brand_fm,
+.add_product .add_pro_fm{
+	width: 500px;
+	height: 400px;
+	margin: auto;
+}
+.update_product table tr td,
+.update_brand table tr td,
+.add_product table tr td{
+	display: inline-block;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+}
+.update_product table tr td:nth-child(1),
+.update_brand table tr td:nth-child(1),
+.add_product table tr td:nth-child(1){
+	width: 160px;
+}
+.update_product table tr td input,
+.update_brand table tr td input,
+.add_product table tr td input{
+	height: 30px;
+	width: 250px;
+	font-weight: bold;
+	text-indent: 1em;
+}
+.update_product table .pro_img,
+.add_product table .pro_img{
+	padding: 20px;
+}
+.update_product table .pro_img td:nth-child(2),
+.add_product table .pro_img td:nth-child(2){
+	width: 163px;
+}
+.update_product button,
+.update_brand button,
+.add_product button{
+	display: block;
+	width: 60px;
+	height: 30px;
+	margin: 20px auto;
+}
 
 
 

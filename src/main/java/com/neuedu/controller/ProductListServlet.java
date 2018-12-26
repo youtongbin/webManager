@@ -23,8 +23,6 @@ public class ProductListServlet extends HttpServlet {
         int pageNo = req.getParameter("pageNo") == null ? 1 : Integer.parseInt(req.getParameter("pageNo"));
         String key = req.getParameter("key");
 
-        System.out.println(key);
-
         int pageSize = 6;
 //        int pageSize = 1;
 

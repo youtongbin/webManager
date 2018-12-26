@@ -10,6 +10,47 @@ import java.util.List;
 
 public class ProductDao implements IProductDao {
     @Override
+    public int addProduct(Product product) {
+        return JdbcUtil.executeUpdate("insert into product(brand_id,product_name,price,url,stock) values(?,?,?,?,?)",product.getBrandId(),product.getProductName(),product.getPrice(),product.getUrl(),product.getStock());
+    }
+
+    @Override
+    public int update(Product product) {
+        return JdbcUtil.executeUpdate("update product set product_name=?,price=?,url=?,stock=? where id=?",product.getProductName(),product.getPrice(),product.getUrl(),product.getStock(),product.getId());
+    }
+
+    @Override
+    public int delete(Integer id) {
+        return JdbcUtil.executeUpdate("delete from product where id=?",id);
+    }
+
+    @Override
+    public int deletes(Integer brandId) {
+        return JdbcUtil.executeUpdate("delete from product where brand_id=?",brandId);
+    }
+
+    @Override
+    public Product getOne(Integer id) {
+        return JdbcUtil.getOne("select * from product where id = ?", new RowMap<Product>() {
+            @Override
+            public Product RowMapping(ResultSet rs) {
+                Product p = new Product();
+                try {
+                    p.setId(id);
+                    p.setBrandId(rs.getInt("brand_id"));
+                    p.setProductName(rs.getString("product_name"));
+                    p.setPrice(rs.getDouble("price"));
+                    p.setUrl(rs.getString("url"));
+                    p.setStock(rs.getInt("stock"));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return p;
+            }
+        }, id);
+    }
+
+    @Override
     public List<Product> getLists() {
         return JdbcUtil.executeQuery("select * from product", new RowMap<Product>() {
             @Override

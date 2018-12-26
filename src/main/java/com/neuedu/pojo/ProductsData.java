@@ -30,7 +30,6 @@ public class ProductsData {
     }
 
     public void setUrl(String url,String params){
-        System.out.println("ProductsData:"+params);
         this.url = url;
         StringBuffer strb = new StringBuffer();
         if(pageNo==1){

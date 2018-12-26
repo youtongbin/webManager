@@ -41,6 +41,17 @@ $(function(){
         $("#product_manager_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
     });
 
+    //修改商品信息
+    $("#update_product").click(function () {
+        $("#update_product_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
+    });
+
+    //品牌管理
+    $("#brand_manager").click(function () {
+        $("#brand_manager_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
+    });
+
+
     //授权管理
     $("#power").click(function () {
         $("#power_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
@@ -96,7 +107,21 @@ $(function(){
     /**
      * 商品管理
      */
-
+    // $(".upt_pro_btn").click(function () {
+    //     var id = $(".product_id").val();
+    //     alert(id)
+    //     $.ajax({
+    //         url:"update",
+    //         type:"get",
+    //         data:id,
+    //         success:function (e) {
+    //             $(".update_product").show();
+    //         }
+    //
+    //     });
+    //
+    //
+    // });
 
 
 

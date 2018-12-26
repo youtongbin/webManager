@@ -22,7 +22,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>个人中心</title>
+    <title>主页</title>
     <link rel="stylesheet" type="text/css" href="${path}/homepage_css/index.css"/>
 </head>
 <body>
