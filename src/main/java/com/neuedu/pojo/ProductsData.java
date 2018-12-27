@@ -4,16 +4,6 @@ import lombok.Data;
 
 import java.util.List;
 
-/**
- * ·ÖÒ³Ìõ
- * list¼¯ºÏ·Å²éÑ¯Êı¾İ
- * page_number¸ø³öÊı¾İÕ¹Ê¾Ò³Ãæ
- * page_Size¸ø¶¨Ã¿Ò³´æ·ÅµÄĞÅÏ¢ÌõÊı
- * max_page×î´óÒ³Êı
- * max_countÊı¾İÌõÊı
- * urlÌø×ªÒ³ÊıµØÖ·
- * page_viewÆ´½ÓÕ¹Ê¾·ÖÒ³Ìõ
- */
 @Data
 public class ProductsData {
     private List<?> lists;
@@ -33,11 +23,11 @@ public class ProductsData {
         this.url = url;
         StringBuffer strb = new StringBuffer();
         if(pageNo==1){
-            strb.append("<li class='page'><a href='javascript:void(0)"+params+"' >Ê×Ò³</a></li>");
-            strb.append("<li class='page'><a href='javascript:void(0)"+params+"' >ÉÏÒ»Ò³</a></li>");
+            strb.append("<li class='page'><a href='javascript:void(0)"+params+"' >é¦–é¡µ</a></li>");
+            strb.append("<li class='page'><a href='javascript:void(0)"+params+"' >ä¸Šä¸€é¡µ</a></li>");
         }else{
-            strb.append("<li class='page'><a href='"+url+"?pageNo=1"+params+"' >Ê×Ò³</a></li>");
-            strb.append("<li class='page'><a href='"+url+"?pageNo="+(pageNo-1)+""+params+"'>ÉÏÒ»Ò³</a></li>");
+            strb.append("<li class='page'><a href='"+url+"?pageNo=1"+params+"' >é¦–é¡µ</a></li>");
+            strb.append("<li class='page'><a href='"+url+"?pageNo="+(pageNo-1)+""+params+"'>ä¸Šä¸€é¡µ</a></li>");
         }
 
         int min = pageNo-2;
@@ -74,11 +64,11 @@ public class ProductsData {
         }
 
         if(pageNo==maxPage){
-            strb.append("<li class='page'><a href='javascript:void(0)"+params+"'>ÏÂÒ»Ò³</a></li>");
-            strb.append("<li class='page'><a href='javascript:void(0)"+params+"'>Î²Ò³</a></li>");
+            strb.append("<li class='page'><a href='javascript:void(0)"+params+"'>ä¸‹ä¸€é¡µ</a></li>");
+            strb.append("<li class='page'><a href='javascript:void(0)"+params+"'>å°¾é¡µ</a></li>");
         }else{
-            strb.append("<li class='page'><a href='"+url+"?pageNo="+(pageNo+1)+""+params+"'>ÏÂÒ»Ò³</a></li>");
-            strb.append("<li class='page'><a href='"+url+"?pageNo="+(maxPage)+""+params+"'>Î²Ò³</a></li>");
+            strb.append("<li class='page'><a href='"+url+"?pageNo="+(pageNo+1)+""+params+"'>ä¸‹ä¸€é¡µ</a></li>");
+            strb.append("<li class='page'><a href='"+url+"?pageNo="+(maxPage)+""+params+"'>å°¾é¡µ</a></li>");
         }
         this.pageView = strb.toString();
 

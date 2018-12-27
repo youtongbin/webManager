@@ -110,6 +110,7 @@ dt:hover,dd:hover{
     box-sizing: border-box;
     border: 1px solid #ccc;
     background-color: white;
+	overflow: auto;
 }
 .indent_up{
 	z-index: 9;
@@ -153,6 +154,7 @@ dt:hover,dd:hover{
 /*各个主页列表*/
 .products_tb,
 .product_manager_tb,
+.power_manager_tb,
 .brand_tb{
 	border: 1px solid #cccccc;
 	border-collapse: collapse;
@@ -162,6 +164,8 @@ dt:hover,dd:hover{
 .products_tb td,
 .product_manager_tb th,
 .product_manager_tb td,
+.power_manager_tb th,
+.power_manager_tb td,
 .brand_tb th,
 .brand_tb td{
 	padding: 5px 10px;
@@ -170,17 +174,20 @@ dt:hover,dd:hover{
 }
 .products_tb tbody tr:nth-child(odd),
 .product_manager_tb tbody tr:nth-child(odd),
+.power_manager_tb tbody tr:nth-child(odd),
 .brand_tb tbody tr:nth-child(odd){
 	background-color: beige;
 }
 
 .products_tb thead tr,
 .product_manager_tb thead tr,
+.power_manager_tb thead tr,
 .brand_tb thead tr{
 	height: 50px;
 }
 .products_tb tbody tr,
 .product_manager_tb tbody tr,
+.power_manager_tb tbody tr,
 .brand_tb tbody tr{
 	height: 40px;
 }

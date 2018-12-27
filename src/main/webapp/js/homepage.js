@@ -53,8 +53,13 @@ $(function(){
 
 
     //授权管理
-    $("#power").click(function () {
-        $("#power_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
+    $("#power_manager").click(function () {
+        $("#power_manager_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
+    });
+
+    //权限列表
+    $("#power_tb").click(function () {
+        $("#power_tb_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
     });
 
     //用户反馈

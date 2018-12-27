@@ -36,7 +36,7 @@
                     <dt>用户中心</dt>
                     <dd id="product_manager">商品管理</dd>
                     <dd id="personal">个人中心</dd>
-                    <dd id="power">授权管理</dd>
+                    <dd id="power"><a href="power" style="text-decoration: none">权限管理</a></dd>
                 </dl>
                 <dl>
                     <dt>关于我们</dt>
@@ -148,16 +148,6 @@
 
                 </div>
 
-                <div class="right_item indent_down" id="power_con">
-                    <div class="right_title">
-                        <span>授权管理</span>
-
-                    </div>
-                    <div class="right_con">
-
-                    </div>
-
-                </div>
 
                 <div class="right_item indent_down" id="user_feedback_con">
                     <div class="right_title">
