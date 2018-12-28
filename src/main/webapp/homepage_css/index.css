@@ -151,63 +151,46 @@ dt:hover,dd:hover{
 	margin-left: 30px;
 }
 
+
 /*各个主页列表*/
-.products_tb,
-.product_manager_tb,
-.power_manager_tb,
-.brand_tb{
+.con_tb{
 	border: 1px solid #cccccc;
 	border-collapse: collapse;
 	width: 100%;
 }
-.products_tb th,
-.products_tb td,
-.product_manager_tb th,
-.product_manager_tb td,
-.power_manager_tb th,
-.power_manager_tb td,
-.brand_tb th,
-.brand_tb td{
+
+.con_tb th,.con_tb td{
 	padding: 5px 10px;
 	text-align: center;
 	border: 1px solid #cccccc;
 }
-.products_tb tbody tr:nth-child(odd),
-.product_manager_tb tbody tr:nth-child(odd),
-.power_manager_tb tbody tr:nth-child(odd),
-.brand_tb tbody tr:nth-child(odd){
+
+.con_tb_tbody_tr:nth-child(odd){
 	background-color: beige;
 }
 
-.products_tb thead tr,
-.product_manager_tb thead tr,
-.power_manager_tb thead tr,
-.brand_tb thead tr{
+.con_tb_thead_tr{
 	height: 50px;
 }
-.products_tb tbody tr,
-.product_manager_tb tbody tr,
-.power_manager_tb tbody tr,
-.brand_tb tbody tr{
+
+.con_tb_tbody_tr{
 	height: 40px;
 }
 
-.products_tb thead tr th:nth-child(5),
-.products_tb tbody tr td:nth-child(5),
-.product_manager_tb thead tr th:nth-child(6),
-.product_manager_tb tbody tr td:nth-child(6),
-.product_manager_tb thead tr th:nth-child(7),
-.product_manager_tb tbody tr td:nth-child(7),
-.brand_tb thead tr th:nth-child(3),
-.brand_tb tbody tr td:nth-child(3),
-.brand_tb thead tr th:nth-child(4),
-.brand_tb tbody tr td:nth-child(4){
+.option_width{
 	width: 50px;
 }
 
-.update_product,
-.update_brand,
-.add_product{
+.option_width_big{
+	width: 80px;
+}
+
+
+/**
+添加修改页面
+ */
+
+.con_opt_block{
 	margin: auto;
 	width: 100%;
 	height: 100%;
@@ -219,53 +202,46 @@ dt:hover,dd:hover{
 	color: white;
 }
 
-.update_product .upd_tit,
-.update_brand .upb_tit,
-.add_product .add_tit{
+.con_opt_tit{
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
 	font-size: 24px;
 }
-.update_product .update_pro_fm,
-.update_brand .update_brand_fm,
-.add_product .add_pro_fm{
+
+.con_opt_fm{
 	width: 500px;
 	height: 400px;
 	margin: auto;
 }
-.update_product table tr td,
-.update_brand table tr td,
-.add_product table tr td{
+
+.con_opt_fm table tr td{
 	display: inline-block;
 	text-align: center;
 	height: 60px;
 	line-height: 60px;
 }
-.update_product table tr td:nth-child(1),
-.update_brand table tr td:nth-child(1),
-.add_product table tr td:nth-child(1){
+
+.con_opt_fm table tr td:nth-child(1){
 	width: 160px;
 }
-.update_product table tr td input,
-.update_brand table tr td input,
-.add_product table tr td input{
+
+.con_opt_fm table tr td input{
 	height: 30px;
 	width: 250px;
 	font-weight: bold;
 	text-indent: 1em;
 }
-.update_product table .pro_img,
-.add_product table .pro_img{
+
+.con_opt_fm table .pro_img{
 	padding: 20px;
 }
-.update_product table .pro_img td:nth-child(2),
-.add_product table .pro_img td:nth-child(2){
+
+.con_opt_fm table .pro_img td:nth-child(2){
 	width: 163px;
 }
-.update_product button,
-.update_brand button,
-.add_product button{
+
+.con_opt_fm button{
 	display: block;
 	width: 60px;
 	height: 30px;
@@ -274,7 +250,8 @@ dt:hover,dd:hover{
 
 
 
-
+/*分页条
+ */
 .fen_ye{
     position: absolute;
     bottom: 100px;
@@ -307,6 +284,9 @@ dt:hover,dd:hover{
 	text-align: center;
 }
 
+/**
+	搜索框
+ */
 .search{
     position: absolute;
     bottom: 20px;

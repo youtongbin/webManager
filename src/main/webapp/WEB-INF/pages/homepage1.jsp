@@ -53,25 +53,25 @@
 
                 </div>
                 <div class="right_con">
-                    <table class="products_tb">
+                    <table class="con_tb">
                         <thead>
-                            <tr>
+                            <tr class="con_tb_thead_tr">
                                 <th>商品编号</th>
                                 <th>商品名称</th>
                                 <th>商品单价</th>
                                 <th>图片</th>
-                                <th>操作</th>
+                                <th class="option_width">操作</th>
                             </tr>
                         </thead>
                         <tbody>
 
                             <c:forEach items="${data.lists}" var="p">
-                                <tr>
+                                <tr class="con_tb_tbody_tr">
                                     <td>${p.id}</td>
                                     <td>${p.productName}</td>
                                     <td>${p.price}</td>
                                     <td><img src="${p.url}" alt="图片" width="20" height="20"></td>
-                                    <td><button type="button">操作</button></td>
+                                    <td class="option_width"><button type="button">操作</button></td>
                                 </tr>
 
                             </c:forEach>

@@ -22,7 +22,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>修改商品信息</title>
+    <title>添加角色</title>
     <link rel="stylesheet" type="text/css" href="${path}/homepage_css/index.css"/>
 </head>
 <body>
@@ -34,8 +34,8 @@
     <div class="main">
         <div class="left">
             <dl>
-                <dt>修改信息</dt>
-                <dd id="update_product">修改商品</dd>
+                <dt>添加角色</dt>
+                <dd id="update_product">添加角色</dd>
                 <dd id="goback"><a href="goback">返回主页</a></dd>
             </dl>
             <dl>
@@ -49,38 +49,18 @@
 
             <div class="right_item indent_up" id="update_product_con">
                 <div class="right_title">
-                    <span>修改商品</span>
+                    <span>添加角色</span>
 
                 </div>
                 <div class="right_con">
-                    <%--修改商品信息--%>
+                    <%--添加角色--%>
                     <div class="con_opt_block">
-                        <div class="con_opt_tit"><p>修改商品信息</p></div>
-                        <form action="doUpdate" method="post" class="con_opt_fm" id="update_pro_fm" enctype="multipart/form-data">
-                            <table class="update_pro_tb">
+                        <div class="con_opt_tit"><p>添加角色</p></div>
+                        <form action="doAddRole" method="post" class="con_opt_fm" id="add_role_fm">
+                            <table class="add_pro_tb">
                                 <tr>
-                                    <td>商品ID</td>
-                                    <td><input type="text" name="id" id="id" value="${product.id}" readonly="readonly"></td>
-                                </tr>
-                                <tr style="display: none">
-                                    <td>品牌ID</td>
-                                    <td><input type="hidden" name="brand_id" id="brand_id" value="${product.brandId}"></td>
-                                </tr>
-                                <tr>
-                                    <td>商品名称</td>
-                                    <td><input type="text" name="product_name" id="product_name" value="${product.productName}"></td>
-                                </tr>
-                                <tr>
-                                    <td>商品单价</td>
-                                    <td><input type="text" name="price" id="price" value="${product.price}"></td>
-                                </tr>
-                                <tr class="pro_img">
-                                    <td>商品图标</td>
-                                    <td><input type="file" name="file" id="file" value="${product.url}"></td>
-                                </tr>
-                                <tr>
-                                    <td>商品库存</td>
-                                    <td><input type="text" name="stock" id="stock" value="${product.stock}"></td>
+                                    <td>角色名称</td>
+                                    <td><input type="text" name="role_name" id="role_name" value=""></td>
                                 </tr>
 
                             </table>
@@ -89,18 +69,6 @@
 
                     </div>
 
-
-                </div>
-
-            </div>
-
-
-            <div class="right_item indent_down" id="update_brand_con">
-                <div class="right_title">
-                    <span>修改品牌</span>
-
-                </div>
-                <div class="right_con">
 
                 </div>
 

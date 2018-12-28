@@ -54,9 +54,9 @@
                 </div>
                 <div class="right_con">
                     <%--添加商品--%>
-                    <div class="add_product">
-                        <div class="add_tit"><p>添加商品</p></div>
-                        <form action="doAddProduct" method="post" class="add_pro_fm" id="add_pro_fm" enctype="multipart/form-data">
+                    <div class="con_opt_block">
+                        <div class="con_opt_tit"><p>添加商品</p></div>
+                        <form action="doAddProduct" method="post" class="con_opt_fm" id="add_pro_fm" enctype="multipart/form-data">
                             <table class="add_pro_tb">
                                 <tr>
                                     <td>品牌ID</td>

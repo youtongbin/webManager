@@ -54,9 +54,9 @@
                 </div>
                 <div class="right_con">
                     <%--添加品牌--%>
-                    <div class="add_product">
-                        <div class="add_tit"><p>添加品牌</p></div>
-                        <form action="doAddBrand" method="post" class="add_pro_fm" id="add_pro_fm">
+                    <div class="con_opt_block">
+                        <div class="con_opt_tit"><p>添加品牌</p></div>
+                        <form action="doAddBrand" method="post" class="con_opt_fm" id="add_pro_fm">
                             <table class="add_pro_tb">
                                 <tr>
                                     <td>品牌名称</td>

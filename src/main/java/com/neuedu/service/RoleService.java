@@ -28,4 +28,5 @@ public class RoleService implements IRoleService {
     public Role getOne(String roleName) {
         return roleDao.getOne(roleName);
     }
+
 }

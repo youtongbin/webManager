@@ -59,32 +59,32 @@
 
                 </div>
                 <div class="right_con">
-                    <table class="product_manager_tb">
+                    <table class="con_tb">
                         <thead>
-                        <tr>
+                        <tr class="con_tb_thead_tr">
                             <th>商品编号</th>
                             <th>商品名称</th>
                             <th>商品单价</th>
                             <th>图片</th>
                             <th>库存</th>
-                            <th>修改</th>
-                            <th>删除</th>
+                            <th class="option_width">修改</th>
+                            <th class="option_width">删除</th>
                         </tr>
                         </thead>
                         <tbody>
 
                         <c:forEach items="${data.lists}" var="p">
-                            <tr>
+                            <tr class="con_tb_tbody_tr">
                                 <td><input type="hidden" name="product_id" class="product_id" value="${p.id}">${p.id}
                                 </td>
                                 <td>${p.productName}</td>
                                 <td>${p.price}</td>
                                 <td><img src="${p.url}" alt="图片" width="20" height="20"></td>
                                 <td>${p.stock}</td>
-                                <td><a href="update?id=${p.id}">
+                                <td class="option_width"><a href="update?id=${p.id}">
                                     <button>修改</button>
                                 </a></td>
-                                <td><a href="delete?id=${p.id}">
+                                <td class="option_width"><a href="delete?id=${p.id}">
                                     <button>删除</button>
                                 </a></td>
                             </tr>

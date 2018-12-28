@@ -54,9 +54,9 @@
                 </div>
                 <div class="right_con">
                     <%--修改品牌信息--%>
-                    <div class="update_brand">
-                        <div class="upb_tit"><p>修改品牌信息</p></div>
-                        <form action="doUpdateBrand" method="get" class="update_brand_fm" id="update_brand_fm">
+                    <div class="con_opt_block">
+                        <div class="con_opt_tit"><p>修改品牌信息</p></div>
+                        <form action="doUpdateBrand" method="get" class="con_opt_fm" id="update_brand_fm">
                             <table class="update_brand_tb">
                                 <tr>
                                     <td>品牌ID</td>

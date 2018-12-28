@@ -50,29 +50,39 @@
 
             <div class="right_item indent_up" id="power_manager_con">
                 <div class="right_title">
-                    <span>权限管理</span>
+                    <span>授权管理</span>
 
                 </div>
                 <div class="right_con">
 
-                    <table class="power_manager_tb">
+                    <table class="con_tb">
                         <thead>
-                        <tr>
+                        <tr class="con_tb_thead_tr">
                             <th>用户ID</th>
                             <th>用户名称</th>
                             <th>用户权限</th>
-                            <th>修改权限</th>
-                            <th>删除用户</th>
+                            <th class="option_width_big">修改权限</th>
+                            <th class="option_width_big">删除用户</th>
                         </tr>
                         </thead>
                         <tbody>
                         <c:forEach items="${users_roles}" var="ur">
-                            <tr>
+                            <tr class="con_tb_tbody_tr">
                                 <td>${ur.user.id}</td>
                                 <td>${ur.user.username}</td>
                                 <td>${ur.roleName}</td>
-                                <td><a href="update_power?id=${ur.user.id}"><button>修改</button></a></td>
-                                <td><a href="delete_user?id=${ur.user.id}"><button>删除</button></a></td>
+
+                                <c:if test='${(ur.roleName == "超级管理员")}'>
+                                    <td class="option_width_big"><a><button disabled="disabled">修改</button></a></td>
+                                    <td class="option_width_big"><a><button disabled="disabled">删除</button></a></td>
+                                </c:if>
+                                <c:if test='${(ur.roleName != "超级管理员")}'>
+                                    <td class="option_width_big"><a href="update_power?id=${ur.user.id}&username=${ur.user.username}&role_name=${ur.roleName}"><button>修改</button></a></td>
+                                    <td class="option_width_big"><a href="delete_user?id=${ur.user.id}"><button>删除</button></a></td>
+                                </c:if>
+
+                                <%--<td><a href="update_power?id=${ur.user.id}"><button>修改</button></a></td>--%>
+                                <%--<td><a href="delete_user?id=${ur.user.id}"><button>删除</button></a></td>--%>
                             </tr>
                         </c:forEach>
                         </tbody>
@@ -92,7 +102,24 @@
 
                 </div>
                 <div class="right_con">
-                    ${roles}
+                    <table class="con_tb">
+                        <thead>
+                        <tr class="con_tb_thead_tr">
+                            <th>角色ID</th>
+                            <th>角色名</th>
+                            <th class="option_width">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${roles}" var="r">
+                            <tr class="con_tb_tbody_tr">
+                                <td>${r.id}</td>
+                                <td>${r.roleName}</td>
+                                <td class="option_width"><a><button>操作</button></a></td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>

@@ -57,22 +57,22 @@
                 </div>
                 <div class="right_con">
 
-                    <table class="brand_tb">
+                    <table class="con_tb">
                         <thead>
-                            <tr>
+                            <tr class="con_tb_thead_tr">
                                 <th>品牌ID</th>
                                 <th>品牌名称</th>
-                                <th>修改</th>
-                                <th>删除</th>
+                                <th class="option_width">修改</th>
+                                <th class="option_width">删除</th>
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach items="${brands}" var="b">
-                                <tr>
+                                <tr class="con_tb_tbody_tr">
                                     <td>${b.id}</td>
                                     <td>${b.brandName}</td>
-                                    <td><a href="update_brand?id=${b.id}"><button>修改</button></a></td>
-                                    <td><a href="delete_brand?id=${b.id}"><button>删除</button></a></td>
+                                    <td class="option_width"><a href="update_brand?id=${b.id}"><button>修改</button></a></td>
+                                    <td class="option_width"><a href="delete_brand?id=${b.id}"><button>删除</button></a></td>
                                 </tr>
                             </c:forEach>
                         </tbody>
