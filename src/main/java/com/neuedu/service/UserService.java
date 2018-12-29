@@ -28,4 +28,9 @@ public class UserService implements IUserService {
     public int update(User newInfo) {
         return userDao.update(newInfo);
     }
+
+    @Override
+    public int delete(Integer id) {
+        return userDao.delete(id);
+    }
 }

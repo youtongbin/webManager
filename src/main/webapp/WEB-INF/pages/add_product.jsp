@@ -59,7 +59,7 @@
                         <form action="doAddProduct" method="post" class="con_opt_fm" id="add_pro_fm" enctype="multipart/form-data">
                             <table class="add_pro_tb">
                                 <tr>
-                                    <td>品牌ID</td>
+                                    <td>品牌名称</td>
                                     <td>
                                         <select name="select_brand" style="height: 30px;width: 250px;text-indent: 1em">
                                             <option>--请选择--</option>

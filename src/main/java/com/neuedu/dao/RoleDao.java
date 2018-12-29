@@ -50,7 +50,7 @@ public class RoleDao implements IRoleDao {
 
     @Override
     public Role getOne(String roleName) {
-        return JdbcUtil.getOne("select * from role where id=?", new RowMap<Role>() {
+        return JdbcUtil.getOne("select * from role where role_name=?", new RowMap<Role>() {
             @Override
             public Role RowMapping(ResultSet rs) {
                 Role r = new Role();

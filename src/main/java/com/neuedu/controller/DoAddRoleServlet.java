@@ -16,7 +16,12 @@ public class DoAddRoleServlet extends HttpServlet {
     IRoleService roleService = new RoleService();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        roleService.add(new Role(req.getParameter("role_name")));
+        String roleName = req.getParameter("role_name");
+        if (!roleName.matches("[ ]*") && roleService.getOne(roleName) == null){
+            roleService.add(new Role(roleName));
+        }else {
+            req.getRequestDispatcher("add_role").forward(req,resp);
+        }
         resp.sendRedirect("power");
     }
 }

@@ -13,4 +13,6 @@ public interface IUserDao {
     int add(User user);
     //修改信息
     int update(User newInfo);
+    //删除用户
+    int delete(Integer id);
 }

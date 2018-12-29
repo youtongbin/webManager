@@ -62,6 +62,11 @@ $(function(){
         $("#power_tb_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
     });
 
+    //修改权限
+    $("#update_power").click(function () {
+        $("#update_power_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");
+    });
+
     //用户反馈
     $("#user_feedback").click(function () {
         $("#user_feedback_con").addClass("indent_up").removeClass("indent_down").siblings("div").addClass("indent_down").removeClass("indent_up");

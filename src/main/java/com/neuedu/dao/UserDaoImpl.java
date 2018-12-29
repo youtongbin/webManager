@@ -56,4 +56,9 @@ public class UserDaoImpl implements IUserDao {
     public int update(User newInfo) {
         return JdbcUtil.executeUpdate("update user set username=?,password=?,tele=? where id=?",newInfo.getUsername(),newInfo.getPassword(),newInfo.getTele(),newInfo.getId());
     }
+
+    @Override
+    public int delete(Integer id) {
+        return JdbcUtil.executeUpdate("delete from user where id=?",id);
+    }
 }

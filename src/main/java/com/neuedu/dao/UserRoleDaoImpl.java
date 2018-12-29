@@ -32,4 +32,14 @@ public class UserRoleDaoImpl implements IUserRoleDao {
     public int add(Integer userId,Integer roleId) {
         return JdbcUtil.executeUpdate("insert into user_role(user_id,role_id) values (?,?)",userId,roleId);
     }
+
+    @Override
+    public int delete(Integer userId, Integer roleId) {
+        return JdbcUtil.executeUpdate("delete from user_role where user_id=? and role_id=?",userId,roleId);
+    }
+
+    @Override
+    public int delete(Integer userId) {
+        return JdbcUtil.executeUpdate("delete from user_role where user_id=?",userId);
+    }
 }

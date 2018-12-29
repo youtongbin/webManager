@@ -16,7 +16,12 @@ public class DoAddBrandServlet extends HttpServlet {
     IBrandService brandService = new BrandService();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        brandService.add(new Brand(req.getParameter("brand_name")));
+        String brandName = req.getParameter("brand_name");
+        if (!brandName.matches("[ ]*") && brandService.getOne(brandName) == null){
+            brandService.add(new Brand(brandName));
+        }else {
+            req.getRequestDispatcher("add_brand").forward(req,resp);
+        }
         resp.sendRedirect("brand_manager");
     }
 }

@@ -17,4 +17,14 @@ public class UserRoleService implements IUserRoleService {
     public int add(Integer userId,Integer roleId) {
         return userRoleDao.add(userId,roleId);
     }
+
+    @Override
+    public int delete(Integer userId, Integer roleId) {
+        return userRoleDao.delete(userId,roleId);
+    }
+
+    @Override
+    public int delete(Integer userId) {
+        return userRoleDao.delete(userId);
+    }
 }

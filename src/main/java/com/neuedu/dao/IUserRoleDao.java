@@ -8,4 +8,6 @@ public interface IUserRoleDao {
     //根据id一个id对应的角色
     List<UserRole> getLists(Integer userId);
     int add(Integer userId,Integer roleId);
+    int delete(Integer userId,Integer roleId);
+    int delete(Integer userId);
 }
