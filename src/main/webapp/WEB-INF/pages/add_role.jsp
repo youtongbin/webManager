@@ -57,7 +57,7 @@
                     <div class="con_opt_block">
                         <div class="con_opt_tit"><p>添加角色</p></div>
                         <form action="doAddRole" method="post" class="con_opt_fm" id="add_role_fm">
-                            <table class="add_pro_tb">
+                            <table>
                                 <tr>
                                     <td>角色名称</td>
                                     <td><input type="text" name="role_name" id="role_name" value=""></td>

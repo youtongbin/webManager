@@ -57,7 +57,7 @@
                     <div class="con_opt_block">
                         <div class="con_opt_tit"><p>添加品牌</p></div>
                         <form action="doAddBrand" method="post" class="con_opt_fm" id="add_pro_fm">
-                            <table class="add_pro_tb">
+                            <table>
                                 <tr>
                                     <td>品牌名称</td>
                                     <td><input type="text" name="brand_name" id="brand_name" value=""></td>

@@ -57,7 +57,7 @@
                     <div class="con_opt_block">
                         <div class="con_opt_tit"><p>添加商品</p></div>
                         <form action="doAddProduct" method="post" class="con_opt_fm" id="add_pro_fm" enctype="multipart/form-data">
-                            <table class="add_pro_tb">
+                            <table>
                                 <tr>
                                     <td>品牌名称</td>
                                     <td>

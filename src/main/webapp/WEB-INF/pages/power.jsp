@@ -51,7 +51,9 @@
             <div class="right_item indent_up" id="power_manager_con">
                 <div class="right_title">
                     <span>授权管理</span>
-
+                    <a style="display: inline-block;margin-right: 30px" href="add_user">
+                        <button>添加用户</button>
+                    </a>
                 </div>
                 <div class="right_con">
 

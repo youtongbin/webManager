@@ -22,7 +22,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>修改权限</title>
+    <title>添加用户</title>
     <link rel="stylesheet" type="text/css" href="${path}/homepage_css/index.css"/>
 </head>
 <body>
@@ -30,11 +30,12 @@
     <div class="head">
         <h1>很高兴见到你<span>${username}</span></h1>
     </div>
+
     <div class="main">
         <div class="left">
             <dl>
-                <dt>修改权限</dt>
-                <dd id="update_power">添加商品</dd>
+                <dt>添加用户</dt>
+                <dd id="update_product">添加用户</dd>
                 <dd id="goback"><a href="goback">返回主页</a></dd>
             </dl>
             <dl>
@@ -46,37 +47,37 @@
 
         <div class="right">
 
-            <div class="right_item indent_up" id="update_power_con">
+            <div class="right_item indent_up" id="update_product_con">
                 <div class="right_title">
-                    <span>修改权限</span>
+                    <span>添加用户</span>
 
                 </div>
                 <div class="right_con">
-                    <%--添加商品--%>
+                    <%--添加用户--%>
                     <div class="con_opt_block">
-
-                        <div class="con_opt_tit"><p>修改权限</p></div>
-                        <form action="doUpdatePower" method="post" class="con_opt_fm" id="upt_power_fm">
-                            <table class="add_pro_tb">
-                                <tr>
-                                    <td>用户ID</td>
-                                    <td><input type="text" name="id" id="id" value="${id}" readonly="readonly"></td>
-                                </tr>
+                        <div class="con_opt_tit"><p>添加用户</p></div>
+                        <form action="doAddUser" method="post" class="con_opt_fm" id="add_role_fm">
+                            <table>
                                 <tr>
                                     <td>用户名称</td>
-                                    <td><input type="text" name="username" id="username" value="${username}" readonly="readonly"></td>
+                                    <td><input type="text" name="username" id="username" value=""></td>
+                                </tr>
+                                <tr>
+                                    <td>密码</td>
+                                    <td><input type="text" name="password" id="password" value=""></td>
                                 </tr>
                                 <tr>
                                     <td>角色名称</td>
                                     <td>
-                                        <select name="select_power" style="height: 30px;width: 250px;text-indent: 1em">
-                                            <option value="${role_name}" selected="selected">${role_name}</option>
+                                        <select name="select_power" id="select_power" style="height: 30px;width: 250px;text-indent: 1em">
+                                            <option value="普通用户">--请选择--</option>
 
                                             <c:forEach items="${roles}" var="r">
                                                 <c:if test="${(r.roleName != '超级管理员')}">
                                                     <option value="${r.roleName}">${r.roleName}</option>
                                                 </c:if>
                                             </c:forEach>
+
                                         </select>
                                     </td>
                                 </tr>
@@ -119,4 +120,3 @@
 
 </body>
 </html>
-
